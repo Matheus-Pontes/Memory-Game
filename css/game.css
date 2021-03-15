@@ -1,0 +1,137 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Press Start 2P', cursive;
+}
+:root{
+    --azul: #0468BF;
+    --pretoClaro: #212729;  
+}
+
+body {
+    height: 100vh;
+    background: var(--azul);
+}
+
+header {
+    padding: 1.25rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+header h3 {
+    color: #fff;
+}
+
+.points {
+    display: flex;
+    align-items: center;
+    justify-items: baseline;
+    padding: 10px;
+}
+
+.memory-game {
+    width: 500px;
+    height: 450px;
+    margin: auto;
+
+    display: flex;
+    flex-wrap: wrap;
+    
+    perspective: 1000px;
+}
+
+.memory-card {
+    width: calc(25% - 10px);
+    height: calc(33.333% - 10px);
+    margin: 5px;
+    position: relative;
+    transform: scale(1);
+    transform-style:preserve-3d;
+    transition: transform .5s;
+    cursor: pointer;
+}
+
+.memory-card:active {
+    transform: scale(.97);
+    transition: transform .2s;
+}
+
+.memory-card.flip {
+    transform: rotateY(180deg);
+}
+
+
+.front-face, .back-face {
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    border-radius: 5px;
+    position: absolute;
+    background: var(--pretoClaro);
+    backface-visibility: hidden;
+}
+.back-face:hover{
+    background: black;
+}
+
+.front-face {
+    transform: rotateY(180deg);
+}
+
+/*Modal Game ======================== */
+.modal-win{
+    width: 100%;
+    height: 100%;
+
+    background-color: rgba(0,0,0,.8);
+
+    position: fixed;
+    top: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 50pt;
+    font-weight: bold;
+    color: #fff;
+    text-shadow: 3px 5px 5px #fff;
+    
+    opacity: 0;
+    visibility: hidden;
+}
+
+@keyframes winner {
+    from {font-size: 20pt;}
+    to {font-size: 50pt;}
+}
+
+.modal-win.active{
+    opacity: 1;
+    visibility: visible;
+    
+    animation: winner 3s;
+    animation-iteration-count:inherit;
+}
+
+footer {
+    margin: 50px;
+    color: var(--pretoClaro);
+    text-align: center;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+footer a {
+    text-decoration: none;
+    color: var(--pretoClaro);
+}
+
+footer img {
+    width: 1.5%;
+}

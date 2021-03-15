@@ -1,0 +1,154 @@
+/* ====== Modals one and two ======== */
+:root {
+    --azulBackground: #0468BF;
+    --pretoBackgroundModal: rgba(0,0,0,.7);
+    --vermelho: #F23030;
+    --verde: #04D939;
+}
+
+/*MODAL ONE ========================= */
+
+.modal-overlay {
+    width: 100%;
+    height: 100%;
+
+    background-color: var(--pretoBackgroundModal);
+    
+    position: fixed;
+    top: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    opacity: 0;
+    visibility: hidden;
+}
+
+.modal-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal {
+    background:var(--azulBackground);
+    padding: 3rem;
+    position: relative;
+    z-index: 1;
+}
+
+#form {
+    max-width: 500px;
+}
+
+#form h2 {
+    margin-bottom: 5px;
+    color: #1c1d1c;
+}
+
+form input {
+    border: none;
+    border-radius: 0.2rem;
+    padding: 0.8rem;
+    width: 100%;
+    margin-top: 5px;
+    margin-bottom: 5px;
+
+    cursor: pointer;
+}
+
+
+.input-group.actions {
+    
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+
+   margin-top: 10px;
+   width: 100%;
+    
+}   
+
+.input-group.actions #btn-cancel {
+    text-decoration: none;
+    color: #fff;
+    width: 50%;
+    border: solid 3px var(--vermelho);
+    text-align: center;
+    padding: 0.5rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-right: 50px;
+}
+.input-group.actions #btn-cancel:hover{
+    background-color: var(--vermelho);
+}
+
+.input-group.actions #btn-salve {
+    text-decoration: none;
+    color: #fff;
+    width: 50%;
+    border: solid 3px var(--verde);
+    text-align: center;
+    padding: 0.6rem;
+    background-color: transparent;
+}
+
+.input-group.actions #btn-salve:hover{
+    background-color: var(--verde);
+    cursor: pointer;
+}
+
+/*MODAL TWO ========================= */
+
+.modal-overlay2 {
+    width: 100%;
+    height: 100%;
+    
+    background-color: var(--pretoBackgroundModal);
+    
+    position: fixed;
+    top: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    opacity: 0;
+    visibility: hidden;
+}
+
+.modal-overlay2.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.input-group.actions #btn2-cancel {
+    text-decoration: none;
+    color: #fff;
+    width: 48%;
+    border: solid 3px var(--vermelho);
+    text-align: center;
+    padding: 0.5rem;
+    margin-right: 50px;
+    
+}
+.input-group.actions #btn2-cancel:hover{
+    background-color: var(--vermelho);
+}
+
+.input-group.actions #btn2-salve {
+    text-decoration: none;
+    color: #fff;
+    width: 48%;
+    border: solid 3px var(--verde);
+    text-align: center;
+    padding: 0.5rem;
+}
+
+.input-group.actions #btn2-salve:hover{
+    background-color: var(--verde);
+}
