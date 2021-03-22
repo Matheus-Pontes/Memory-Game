@@ -21,6 +21,6 @@
     - Pontuação com 6 pontos, no momento
         - abre um modal dizendo YOU WIN! - com o _*you win perfect de Street Figther*_ (.mp3)
 
-## Instalações
+## :gear: Instalações
 - Vscode
     - [Site para download - versão stable](https://code.visualstudio.com/)
