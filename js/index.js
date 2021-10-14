@@ -1,7 +1,7 @@
 let modal = document.querySelector('.modal-overlay');
 let modal2 = document.querySelector('.modal-overlay2');
-
 const buttonGame = document.querySelector('#btn');
+const escudosNFLElement = document.querySelector('#escudosTimesNfl');
 
 // Open and close form, about register
 const Modal = {
@@ -114,3 +114,27 @@ const Storage = {
 
     }
 }
+
+// Change images atée chegar no ulitmo valor 
+const escudosNFL = [
+    '../img/baltimore-ravens-22.svg',
+    '../img/green-bay-packers-1.svg',
+    '../img/kansas-city-chiefs.svg',
+    '../img/new-england-patriots-2.svg',
+    '../img/oakland-raiders.svg',
+    '../img/tampa-bay-buccaneers-2.svg',
+    '../img/nfl.svg',
+]; 
+
+// escudosNFL.forEach((img, index ) => {
+	
+// });
+
+for(let i=0; i < escudosNFL.length; i++) {
+    setInterval(() => {
+		escudosNFLElement.src = escudosNFL[i];
+	}, Math.round(Math.random() * 5000) + 5000);
+
+}
+
+

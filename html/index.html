@@ -15,10 +15,17 @@
 </head>
 <body>
     <header>
-        <h1>JOGO DA MEMÓRIA</h1>
+        <h1>Memory Game NFL</h1>
     </header>
     
     <main class="content">
+
+        <div class="escudoTeams">
+            <figure>
+                <img id='escudosTimesNfl' src="" alt="times da nfl">
+            </figure>
+        </div>
+
         <div class="login">
             <form action="" onsubmit="Form.submit(event)">
                 <input 
@@ -34,16 +41,15 @@
                     placeholder="Password">
                 
                     <button type="submit" id="btn">GAME</button>
+                    <div class="modals">
+                        <a href="#" id="cad" onclick="Modal.open()">
+                            Cadastre-se
+                        </a>
+                        <a href="#" id="passW" onclick="Modal2.open()">
+                            Esqueceu a senha?
+                        </a>
+                </div>
             </form>
-
-                <div class="modals">
-                    <a href="#" id="cad" onclick="Modal.open()">
-                        Cadastre-se
-                    </a>
-                    <a href="#" id="passW" onclick="Modal2.open()">
-                        Esqueceu a senha?
-                    </a>
-            </div>
         </div>    
         
     </main>
@@ -59,13 +65,9 @@
                         <input 
                             type="password" 
                             name="pass" id="pass" placeholder="Password">
-                    
                     </div>
-                    
-                    
                     <div class="input-group actions">
                         <a href="#" id="btn-cancel" onclick="Modal.close()">Cancel</a>
-
                         <button id="btn-salve" type="submit">Salvar</button>
                     </div>
                 </form>
@@ -88,7 +90,6 @@
                             name="newSenha" 
                             id="newSenha" placeholder="Nova Senha">
                     </div>
-                    
                     <div class="input-group actions">
                         <a href="#" id="btn2-cancel" onclick="Modal2.close()">Cancel</a>
                         <a href="#" id="btn2-salve">Salvar</a>

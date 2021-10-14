@@ -6,27 +6,40 @@
 }
 
 :root {
-    --branco: #fff;    
+    --branco: #fefefe;    
     --preto: #212729;
 }
 
 html {
-    height: 100vh;
-    background: #0468BF;
+    height: 100%;
+    width: 100vw;
 }
 
 header {
     margin: 3rem;
     text-align: center;
     color: var(--preto);
-    text-shadow: var(--branco) 5px 3px 10px;
 }
 
 .content {
     padding: 5rem;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.content .escudoTeams {
+    width: 300px;
+    height: 300px;
+    display: flex;
+    align-items: center;
+    box-shadow: 1px 6px 30px rgba(0, 0, 0, .1);
+}
+
+.content .escudoTeams figure img {
+    width: 100%;
+   
 }
 
 form {
@@ -34,46 +47,39 @@ form {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    max-width: 300px;
 }
 
+
 .login form input {
-    display: block;
-    text-align: left;
-    width: 500px;
-    height: 50px;
+    width: 100%;
     padding: 10px;
     margin: 2px;
-    border-radius: 6px;
-    border: solid 3px var(--branco);
+    border-bottom: solid 3px #ccc;
     font-size: 12pt;
+    outline: none;
+    transition: all .5s;
+    cursor: pointer;
 }
 .login form input:hover {
-    cursor: pointer;
-    border: solid 5px var(--branco);  
+    border-color: #343ae9;
+}
+
+#cad, #passW {
+    color: var(--preto);
 }
 
 #btn {
-    width: 500px;
-    height: 3.125rem;
-
+    width: 100%;
     text-decoration: none;
-
     font-size: 12pt;
-    
     margin-top: 8px;
-    padding: 5px;
-    border-radius: 0.375rem;
-    /* border: solid 3px var(--preto); */
+    padding: .75rem 1rem;
+    border-radius: 4px;
     border: 0;
-
     background-color: var(--preto);
     color: var(--branco);
-    
-}
-#btn:hover{
-    border: solid 3px var(--branco);
     cursor: pointer;
-    
 }
 
 .modals {

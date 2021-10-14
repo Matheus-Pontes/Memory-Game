@@ -11,7 +11,8 @@
 
 body {
     height: 100vh;
-    background: var(--azul);
+    background-image: url('../img/_back.jpeg');
+    background-size: cover;
 }
 
 header {
