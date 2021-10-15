@@ -114,27 +114,3 @@ const Storage = {
 
     }
 }
-
-// Change images atée chegar no ulitmo valor 
-const escudosNFL = [
-    '../img/baltimore-ravens-22.svg',
-    '../img/green-bay-packers-1.svg',
-    '../img/kansas-city-chiefs.svg',
-    '../img/new-england-patriots-2.svg',
-    '../img/oakland-raiders.svg',
-    '../img/tampa-bay-buccaneers-2.svg',
-    '../img/nfl.svg',
-]; 
-
-// escudosNFL.forEach((img, index ) => {
-	
-// });
-
-for(let i=0; i < escudosNFL.length; i++) {
-    setInterval(() => {
-		escudosNFLElement.src = escudosNFL[i];
-	}, Math.round(Math.random() * 5000) + 5000);
-
-}
-
-

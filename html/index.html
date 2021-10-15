@@ -9,7 +9,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="../css/style.css">
-    <link rel="stylesheet" href="../css/modal.css">
 
     <title>MEMORY GAME</title>
 </head>
@@ -22,7 +21,7 @@
 
         <div class="escudoTeams">
             <figure>
-                <img id='escudosTimesNfl' src="" alt="times da nfl">
+                <img id='escudosTimesNfl' src="../img/nfl.svg" alt="times da nfl">
             </figure>
         </div>
 
@@ -67,8 +66,8 @@
                             name="pass" id="pass" placeholder="Password">
                     </div>
                     <div class="input-group actions">
-                        <a href="#" id="btn-cancel" onclick="Modal.close()">Cancel</a>
-                        <button id="btn-salve" type="submit">Salvar</button>
+                        <a href="#" class='btn-cancel' id="btn-cancel" onclick="Modal.close()">Cancel</a>
+                        <button class="btn-salve" id="btn-salve" type="submit">Salvar</button>
                     </div>
                 </form>
 
@@ -91,8 +90,8 @@
                             id="newSenha" placeholder="Nova Senha">
                     </div>
                     <div class="input-group actions">
-                        <a href="#" id="btn2-cancel" onclick="Modal2.close()">Cancel</a>
-                        <a href="#" id="btn2-salve">Salvar</a>
+                        <a href="#" class="btn-cancel" id="btn2-cancel" onclick="Modal2.close()">Cancel</a>
+                        <a href="#" class="btn-salve" id="btn2-salve">Salvar</a>
                     </div>
                 </form>
             </div>
@@ -107,5 +106,6 @@
     </footer>
 
     <script src="../js/index.js"></script>
+
 </body>
 </html>
