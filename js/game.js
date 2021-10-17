@@ -1,13 +1,13 @@
-// effect card flip
-
 const card = document.querySelectorAll('.memory-card');
 const modalWin = document.querySelector('.modal-win');
 
 const youWinSound = new Audio();
-youWinSound.src = "../you-win.mp3";
+youWinSound.src = "../audio/you-win.mp3";
+
+const getStorageUserName = () => localStorage.getItem('user');
+document.querySelector('#userName').innerHTML = getStorageUserName();
 
 let scoreGame = document.querySelector('#pontos');
-
 let hasFlippedCard = false;
 let lockBoard = false;
 let firstCard, secondCard;

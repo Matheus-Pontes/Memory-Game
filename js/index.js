@@ -2,25 +2,23 @@ let modal = document.querySelector('.modal-overlay');
 let modal2 = document.querySelector('.modal-overlay2');
 const buttonGame = document.querySelector('#btn');
 const escudosNFLElement = document.querySelector('#escudosTimesNfl');
+const hyperlinkElements = document.getElementsByTagName('a');
 
-// Open and close form, about register
-const Modal = {
-    open(){
-        modal.classList.add('active');
-    },
-    close(){
-        modal.classList.remove('active');
-    }
+const toogleModal = modal => modal.classList.toggle('active');
+
+const functionsHyperlink = {
+    'register': () => toogleModal(modal),
+    'btn-cancel': () => toogleModal(modal),
+    'forgetPassword': () => toogleModal(modal2),
+    'btn2-cancel': () => toogleModal(modal2),
 }
 
-// Open and close form, about forget password
-const Modal2 = {
-    open(){
-        modal2.classList.add('active');
-    },
-    close(){
-        modal2.classList.remove('active');
-    }
+for(let i=0; i < hyperlinkElements.length; i++) {
+    hyperlinkElements[i].addEventListener('click', () => {
+        if(functionsHyperlink[hyperlinkElements[i].id]){
+            functionsHyperlink[hyperlinkElements[i].id]();
+        }
+    });
 }
 
 // Principal form [user, password, button-Game]
@@ -41,7 +39,7 @@ const Form = {
         const { userName, passwordName } = Storage.get();
 
         if(user.trim() === "" && password.trim() === ""){
-            throw new Error('Usuário e senha. Caso contrário se cadastre')
+            throw new Error('Por favor, cadastre-se!');
         } else if (user !== userName && password !== passwordName ){
             throw new Error('Por favor, cadastre-se!')
         } else if(user === userName && password === passwordName ){
@@ -104,13 +102,10 @@ const Storage = {
         return{
             userName: localStorage.getItem('user') || [],
             passwordName: localStorage.getItem('password') || [],
-            
         }
     },
-
     set(){
-        localStorage.setItem('user', Cadastro.user.value)
-        localStorage.setItem('password', Cadastro.password.value)
-
+        localStorage.setItem('user', Cadastro.user.value);
+        localStorage.setItem('password', Cadastro.password.value);
     }
 }

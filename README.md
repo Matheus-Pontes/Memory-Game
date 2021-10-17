@@ -1,9 +1,7 @@
 # Jogo da Memória 
 
 ## Layout
-![Apresentação do Layout](/IMG.png)
-
-[Layout no Figma](https://www.figma.com/file/ZIhFqxA6AbuxptYUvkyU2S/JOGO-DA-MEM%C3%93RIA?node-id=0%3A1)
+- Trabalhando em um novo layout no figma.
 
 ## :rocket: Tecnologias
 - **JavaScript** 

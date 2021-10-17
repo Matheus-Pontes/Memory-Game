@@ -41,10 +41,10 @@
                 
                     <button type="submit" id="btn">GAME</button>
                     <div class="modals">
-                        <a href="#" id="cad" onclick="Modal.open()">
+                        <a href="#" id="register">
                             Cadastre-se
                         </a>
-                        <a href="#" id="passW" onclick="Modal2.open()">
+                        <a href="#" id="forgetPassword">
                             Esqueceu a senha?
                         </a>
                 </div>
@@ -66,7 +66,7 @@
                             name="pass" id="pass" placeholder="Password">
                     </div>
                     <div class="input-group actions">
-                        <a href="#" class='btn-cancel' id="btn-cancel" onclick="Modal.close()">Cancel</a>
+                        <a href="#" class='btn-cancel' id="btn-cancel" value='3'>Cancel</a>
                         <button class="btn-salve" id="btn-salve" type="submit">Salvar</button>
                     </div>
                 </form>
@@ -90,8 +90,8 @@
                             id="newSenha" placeholder="Nova Senha">
                     </div>
                     <div class="input-group actions">
-                        <a href="#" class="btn-cancel" id="btn2-cancel" onclick="Modal2.close()">Cancel</a>
-                        <a href="#" class="btn-salve" id="btn2-salve">Salvar</a>
+                        <a href="#" class="btn-cancel" id="btn2-cancel" value='4'>Cancel</a>
+                        <button type="submit" class="btn-salve" id="btn2-salve">Salvar</button>
                     </div>
                 </form>
             </div>

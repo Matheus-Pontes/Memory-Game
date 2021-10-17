@@ -23,7 +23,7 @@ header {
 }
 
 header h3 {
-    color: #fff;
+    color: var(--pretoClaro);
 }
 
 .points {

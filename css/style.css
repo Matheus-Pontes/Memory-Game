@@ -26,7 +26,8 @@ header {
 }
 
 .content {
-    padding: 2.5rem;
+    padding: 4rem 2.5rem;
+    margin: 50px auto;
     display: flex;
     align-items: center;
     justify-content: space-around;
@@ -50,7 +51,7 @@ form {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    max-width: 300px;
+    max-width: 500px;
     margin-top: 30px;
 }
 
@@ -64,11 +65,11 @@ form {
     transition: all .5s;
     cursor: pointer;
 }
-.login form input:hover {
+.login form input:hover, .login form input:focus {
     border-color: #343ae9;
 }
 
-#cad, #passW {
+#register, #forgetPassword {
     color: var(--preto);
 }
 
@@ -98,7 +99,7 @@ form {
     font-size: 8pt;
 }
 
-.modals a#passW {
+.modals a#forgetPassword {
     margin-left: 7rem;
 }
 
