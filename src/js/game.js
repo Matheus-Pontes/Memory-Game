@@ -94,6 +94,7 @@ function score(){
     }
 }
    
+modalWin.classList.add('active');
 // function create children to open modal in HTML 
 function modalWinner(){
     modalWin.classList.add('active');

@@ -132,7 +132,7 @@ header h3 {
 
 /* Footer =============== */
 footer {
-    margin: 50px;
+    padding: 2rem;
     color: var(--pretoClaro);
     text-align: center;
 
@@ -147,5 +147,45 @@ footer a {
 }
 
 footer img {
-    width: 1.5%;
+    width: 3%;
+}
+
+
+/* Responsive ===== */
+
+@media (max-width: 500px){
+    .memory-game {
+        width: 100%;
+    }
+    .memory-card {
+        width: calc(25% - 10px);
+        height: calc(26% - 1px);
+        margin: 5px;
+        position: relative;
+        transform: scale(1);
+        transform-style: preserve-3d;
+        transition: transform .5s;
+        cursor: pointer;
+    }
+    .front-face, .back-face {
+        padding: 0.2rem; 
+    }
+    header {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    footer {
+        font-size: 87%;
+    }
+    
+    .modal-win {
+        flex-wrap: wrap;
+        font-size: 16pt;
+    }
+
+    @keyframes winner {
+        from {font-size: 1pt;}
+        to {font-size: 16pt;}
+    }
 }
