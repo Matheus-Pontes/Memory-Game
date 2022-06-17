@@ -1,7 +1,9 @@
 # Jogo da Memória 
 
 ## Layout
-- Trabalhando em um novo layout no figma.
+- Tela de login: ![image](https://user-images.githubusercontent.com/62751571/174335954-c172ea9f-7302-47cf-9516-f9165ef523bb.png)
+- Tela do jogo: ![image](https://user-images.githubusercontent.com/62751571/174336028-89cc24cf-093a-48d2-84e2-5ed444829fd6.png)
+- Tela de restart: ![image](https://user-images.githubusercontent.com/62751571/174336375-4989950a-820b-44d6-9140-d2b0ed7930d9.png)
 
 ## :rocket: Tecnologias
 - **JavaScript** 
