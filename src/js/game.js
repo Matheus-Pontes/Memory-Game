@@ -1,23 +1,21 @@
 const card = document.querySelectorAll('.memory-card');
 const modalWin = document.querySelector('.modal-win');
-
-const youWinSound = new Audio();
-youWinSound.src = "../audio/you-win.mp3";
-
-const getStorageUserName = () => localStorage.getItem('user');
-document.querySelector('#userName').innerHTML = getStorageUserName();
-
-let scoreGame = document.querySelector('#pontos');
+const scoreGame = document.querySelector('#pontos');
 let hasFlippedCard = false;
 let lockBoard = false;
 let firstCard, secondCard;
 let points = 0;
 
+const youWinSound = new Audio();
+youWinSound.src = "../audio/you-win.mp3";
+
+const getStorageUserName = () => localStorage.getItem('user');
+const userName = document.querySelector('#userName').innerHTML = getStorageUserName();
+
 function flipCard() {
     if(lockBoard) return;
 
     if(this === firstCard) return;  
-
 
     this.classList.toggle('flip');
     
@@ -41,12 +39,9 @@ function checkForMatch() {
     if(isMatch){
         desableCards();
         score()
-        // Mostrar um modal falando que venceu 
     } else {
         unflipCards();
     }
-   
-    // isMatch ? desableCards() : unflipCards(); 
 }
 
 function desableCards() {
@@ -78,12 +73,14 @@ function resetBoard() {
     function shuffle() there're every execute in program
 */
 
-(function shuffle() {
+function shuffle() {
     card.forEach(card => {
         let randomPos = Math.floor(Math.random() * 12);
         card.style.order = randomPos; 
     })
-})(); 
+};
+
+shuffle();
 
 card.forEach(card => card.addEventListener('click', flipCard));
 
@@ -96,9 +93,22 @@ function score(){
         modalWinner();
     }
 }
-
+   
 // function create children to open modal in HTML 
 function modalWinner(){
     modalWin.classList.add('active');
     youWinSound.play();
+
+    document.querySelector("#restartGame").addEventListener("click", function() {
+        resetGame();
+    });
+}
+
+function resetGame() {
+    modalWin.classList.remove('active');
+    shuffle();
+    card.forEach(item => item.classList.remove('flip'));
+    card.forEach(card => card.addEventListener('click', flipCard));
+    points = 0;
+    scoreGame.innerHTML = points;
 }

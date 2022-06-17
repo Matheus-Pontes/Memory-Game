@@ -43,7 +43,7 @@ const Form = {
         } else if (user !== userName && password !== passwordName ){
             throw new Error('Por favor, cadastre-se!')
         } else if(user === userName && password === passwordName ){
-            window.open('/html/game.html', 'GAME')
+            window.open('./src/html/game.html', 'GAME')
         }
 
     }, 
