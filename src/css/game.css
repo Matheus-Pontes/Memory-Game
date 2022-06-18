@@ -7,12 +7,15 @@
 :root{
     --azul: #0468BF;
     --pretoClaro: #212729;  
+    --branco: #fff;
+    --bc: #183446;
 }
 
 body {
     height: 100vh;
     background-image: url('../img/_back.jpeg');
     background-size: cover;
+    background-color: var(--bc);
 }
 
 header {
@@ -20,10 +23,7 @@ header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-}
-
-header h3 {
-    color: var(--pretoClaro);
+    color: var(--branco);
 }
 
 .points {
@@ -133,7 +133,7 @@ header h3 {
 /* Footer =============== */
 footer {
     padding: 2rem;
-    color: var(--pretoClaro);
+    color: var(--branco);
     text-align: center;
 
     display: flex;
@@ -143,7 +143,7 @@ footer {
 
 footer a {
     text-decoration: none;
-    color: var(--pretoClaro);
+    color: var(--branco);
 }
 
 footer img {
