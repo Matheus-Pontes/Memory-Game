@@ -13,7 +13,7 @@
 
 body {
     height: 100vh;
-    background-image: url('../assets/img/_back.jpeg');
+    background-image: url('../img/_back.jpeg');
     background-size: cover;
     background-color: var(--bc);
 }
