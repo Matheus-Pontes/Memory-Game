@@ -9,7 +9,7 @@ let points = 0;
 const youWinSound = new Audio();
 youWinSound.src = "../assets/audio/you-win.mp3";
 
-const userName = document.querySelector('#userName').innerHTML = 'Rafael';
+document.querySelector('#userName').innerHTML = 'Rafael';
 
 function flipCard() {
     if(lockBoard) return;
