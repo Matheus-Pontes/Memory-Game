@@ -7,10 +7,9 @@ let firstCard, secondCard;
 let points = 0;
 
 const youWinSound = new Audio();
-youWinSound.src = "../audio/you-win.mp3";
+youWinSound.src = "../assets/audio/you-win.mp3";
 
-const getStorageUserName = () => localStorage.getItem('user');
-const userName = document.querySelector('#userName').innerHTML = getStorageUserName();
+const userName = document.querySelector('#userName').innerHTML = 'Rafael';
 
 function flipCard() {
     if(lockBoard) return;
