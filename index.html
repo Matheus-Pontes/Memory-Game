@@ -4,19 +4,16 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
-
     <link rel="stylesheet" href="src/css/style.css">
-
     <title>MEMORY GAME</title>
 </head>
 <body>
     <header>
         <h1>Memory Game NFL</h1>
     </header>
-    
+
     <main class="content">
 
         <div class="escudoTeams">
@@ -27,71 +24,53 @@
 
         <div class="login">
             <form action="" onsubmit="Form.submit(event)">
-                <input 
-                    type="text" 
-                    name="user" 
-                    id="user" 
-                    placeholder="User">
-                
-                <input 
-                    type="password" 
-                    name="pw" 
-                    id="password" 
-                    placeholder="Password">
-                
-                    <button type="submit" id="btn">GAME</button>
-                    <div class="modals">
-                        <a href="#" id="register">
-                            Cadastre-se
-                        </a>
-                        <a href="#" id="forgetPassword">
-                            Esqueceu a senha?
-                        </a>
+                <input type="text" name="user" id="user" placeholder="User">
+                <input type="password" name="pw" id="password" placeholder="Password">
+                <button type="submit" id="btnGame">GAME</button>
+
+                <div class="modals">
+                    <a href="#" id="register">
+                        Cadastre-se
+                    </a>
+                    <a href="#" id="forgetPassword">
+                        Esqueceu a senha?
+                    </a>
                 </div>
             </form>
-        </div>    
-        
+        </div>
     </main>
-    
+
     <div class="modal-overlay">
         <div class="modal">
             <div id="form">
                 <h2>Seus dados</h2>
                 <form action="" onsubmit="Cadastro.submit(event)">
                     <div class="input-group">
-                        <input type="text" 
-                            name="nome" id="name" placeholder="Name">    
-                        <input 
-                            type="password" 
-                            name="pass" id="pass" placeholder="Password">
+                        <input type="text" name="nome" id="name" placeholder="Name">
+                        <input type="password" name="pass" id="pass" placeholder="Password">
                     </div>
                     <div class="input-group actions">
-                        <a href="#" class='btn-cancel' id="btn-cancel" value='3'>Cancel</a>
                         <button class="btn-salve" id="btn-salve" type="submit">Salvar</button>
+                        <a href="#" class='btn-cancel' id="btn-cancel" value='3'>Cancel</a>
                     </div>
                 </form>
 
             </div>
         </div>
     </div>
-    
+
     <div class="modal-overlay2">
         <div class="modal">
             <div id="form">
                 <h2>Nova Senha</h2>
-                <form action="">
+                <form action="" onsubmit="ForgetPassword.submit(event)">
                     <div class="input-group">
-                        <input type="text" 
-                            name="novaSenha" 
-                            id="novaSenha" placeholder="Nova Senha">    
-                        <input 
-                            type="text" 
-                            name="newSenha" 
-                            id="newSenha" placeholder="Nova Senha">
+                        <input type="password" name="newPassword" id="newPassword" placeholder="New password">
+                        <input type="password" name="repeatNewPassword" id="repeatNewPassword" placeholder="New password">
                     </div>
                     <div class="input-group actions">
-                        <a href="#" class="btn-cancel" id="btn2-cancel" value='4'>Cancel</a>
                         <button type="submit" class="btn-salve" id="btn2-salve">Salvar</button>
+                        <a href="#" class="btn-cancel" id="btn2-cancel" value='4'>Cancel</a>
                     </div>
                 </form>
             </div>
@@ -99,14 +78,12 @@
     </div>
 
     <footer>
-        <p>Create by 
-            <a href="https://github.com/Matheus-Pontes">Matheus Pontes</a>
-            <figure>
-                <img src="src/img/github-icon-1.svg" alt="github-icon">
-            </figure>
-        </p>
+        <a href="https://github.com/Matheus-Pontes/Memory-Game"> 
+            Developed by Matheus Pontes 
+        </a>
+        <img src="https://img.icons8.com/color/48/000000/github--v3.png"/>
     </footer>
 
-    <script src="src/js/index.js"></script>
+    <script src="src/js/index.js" defer></script>
 </body>
 </html>

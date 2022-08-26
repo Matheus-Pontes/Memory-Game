@@ -1,24 +1,27 @@
-let modal = document.querySelector('.modal-overlay');
-let modal2 = document.querySelector('.modal-overlay2');
-const buttonGame = document.querySelector('#btn');
-const escudosNFLElement = document.querySelector('#escudosTimesNfl');
-const hyperlinkElements = document.getElementsByTagName('a');
+const $modal = document.querySelector('.modal-overlay');
+const $modal2 = document.querySelector('.modal-overlay2');
+const $buttonGame = document.querySelector('#btnGame');
+const $hyperlinkElements = document.getElementsByTagName('a');
 
-const toogleModal = modal => modal.classList.toggle('active');
+const toogleActiveModal = modal => modal.classList.toggle('active');
 
 const functionsHyperlink = {
-    'register': () => toogleModal(modal),
-    'btn-cancel': () => toogleModal(modal),
-    'forgetPassword': () => toogleModal(modal2),
-    'btn2-cancel': () => toogleModal(modal2),
+    'register': () => toogleActiveModal($modal),
+    'btn-cancel': () => toogleActiveModal($modal),
+    'forgetPassword': () => toogleActiveModal($modal2),
+    'btn2-cancel': () => toogleActiveModal($modal2),
 }
 
-for(let i=0; i < hyperlinkElements.length; i++) {
-    hyperlinkElements[i].addEventListener('click', () => {
-        if(functionsHyperlink[hyperlinkElements[i].id]){
-            functionsHyperlink[hyperlinkElements[i].id]();
+for(let i=0; i < $hyperlinkElements.length; i++) {
+    $hyperlinkElements[i].addEventListener('click', () => {
+        if(functionsHyperlink[$hyperlinkElements[i].id]){
+            functionsHyperlink[$hyperlinkElements[i].id]();
         }
     });
+}
+
+function cleanField($field) {
+    $field.value = '';
 }
 
 // Principal form [user, password, button-Game]
@@ -63,11 +66,10 @@ const Form = {
 // verify to login
 
 const Cadastro = {
-    // user and password
     user: document.querySelector('#name'),
     password: document.querySelector('#pass'),
 
-    getValues(){
+    getValues() {
         return {
             user: Cadastro.user.value,
             password: Cadastro.password.value,
@@ -81,8 +83,9 @@ const Cadastro = {
             throw new Error('Digite usuário e senha. Clique no botão SALVAR.')
         } else {
             Storage.set();
-            modal.classList.remove('active');
-            
+            toogleActiveModal($modal);
+            cleanField(Cadastro.user);
+            cleanField(Cadastro.password);
         }
     },
 
@@ -109,3 +112,31 @@ const Storage = {
         localStorage.setItem('password', Cadastro.password.value);
     }
 }
+
+const ForgetPassword = {
+    newPassword: document.querySelector("#newPassword"),
+    repeatNewPassword: document.querySelector("#repeatNewPassword"),
+
+    validateNewPass: function () {
+
+        if (ForgetPassword.newPassword.value != ForgetPassword.repeatNewPassword.value)
+            alert("BAAAMMM !!! Atenção senhas diferentes !!! ");
+        else {
+            localStorage.setItem('password', ForgetPassword.newPassword.value);
+            toogleActiveModal($modal2);
+            cleanField(ForgetPassword.newPassword);
+            cleanField(ForgetPassword.repeatNewPassword);
+        }
+    },
+
+    submit: function(e) {
+        e.preventDefault();
+
+        try {
+            ForgetPassword.validateNewPass();
+        }
+        catch(e) {
+            alert(e.message);
+        }
+    }
+};

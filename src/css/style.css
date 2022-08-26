@@ -77,7 +77,7 @@ form {
     color: var(--branco);
 }
 
-#btn {
+#btnGame {
     width: 100%;
     text-decoration: none;
     font-size: 12pt;
@@ -202,26 +202,13 @@ form input {
 }
 
 footer {
-    margin: 50px;
-    color: var(--branco);
-    text-align: center;
-
     display: flex;
     justify-content: center;
     align-items: center;
+    gap: 10px;
 }
 
 footer a {
     text-decoration: none;
     color: var(--branco);
-}
-
-footer figure {
-    width: 30px;
-    height: 30px;
-    padding: .25rem;
-}
-
-footer figure img {
-    width: 100%;
 }
