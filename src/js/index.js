@@ -79,20 +79,27 @@ const Cadastro = {
         const { user, password } = Cadastro.getValues();
 
         if(user.trim() === "" && password.trim() === ""){
-            throw new Error('Digite usuário e senha. Clique no botão SALVAR.')
+            return false;
         } else {
             Storage.set();
             toogleActiveModal($modal);
             cleanField(Cadastro.user);
             cleanField(Cadastro.password);
+            
+            return true;
         }
     },
-
+    
     submit(event){
         event.preventDefault();
-
+        
         try {
-            Cadastro.validateFields();
+            let response = Cadastro.validateFields();
+            if(response)
+                alert('Operação realizada com sucesso.');
+            else 
+                alert('Informe usuário e senha.');
+
         } catch (error) {
             alert(error.message);
         }
@@ -115,24 +122,30 @@ const Storage = {
 const ForgetPassword = {
     newPassword: document.querySelector("#newPassword"),
     repeatNewPassword: document.querySelector("#repeatNewPassword"),
-
+    
     validateNewPass: function () {
-
-        if (ForgetPassword.newPassword.value != ForgetPassword.repeatNewPassword.value)
-            alert("BAAAMMM !!! Atenção senhas diferentes !!! ");
+        
+        if (ForgetPassword.newPassword.value != ForgetPassword.repeatNewPassword.value) {
+            return false;
+        }
         else {
             localStorage.setItem('password', ForgetPassword.newPassword.value);
             toogleActiveModal($modal2);
             cleanField(ForgetPassword.newPassword);
             cleanField(ForgetPassword.repeatNewPassword);
+            return true;
         }
     },
-
+    
     submit: function(e) {
         e.preventDefault();
-
+        
         try {
-            ForgetPassword.validateNewPass();
+            let response = ForgetPassword.validateNewPass();
+            if(response)
+                alert('Operação realizada com sucesso.');
+            else 
+                alert("BAAAMMM !!! Atenção senhas diferentes !!! ");
         }
         catch(e) {
             alert(e.message);
