@@ -1,6 +1,5 @@
 const $modal = document.querySelector('.modal-overlay');
 const $modal2 = document.querySelector('.modal-overlay2');
-const $buttonGame = document.querySelector('#btnGame');
 const $hyperlinkElements = document.getElementsByTagName('a');
 
 const toogleActiveModal = modal => modal.classList.toggle('active');
