@@ -1,4 +1,5 @@
-# Jogo da Memória 
+<h1 align='center'>Jogo da Memória</h1>
+
 - [Divirta-se](https://memory-game10.vercel.app/)
 
 ## Layout
