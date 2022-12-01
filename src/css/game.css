@@ -136,27 +136,6 @@ header {
     text-shadow: none;
 }
 
-/* Footer =============== */
-footer {
-    padding: 2rem;
-    color: var(--branco);
-    text-align: center;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-footer a {
-    text-decoration: none;
-    color: var(--branco);
-}
-
-footer img {
-    width: 3%;
-}
-
-
 /* Responsive ===== */
 
 @media (max-width: 500px){
@@ -181,10 +160,6 @@ footer img {
         justify-content: center;
     }
 
-    footer {
-        font-size: 87%;
-    }
-    
     .modal-win {
         flex-wrap: wrap;
         font-size: 16pt;

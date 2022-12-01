@@ -1,6 +1,7 @@
 const card = document.querySelectorAll('.memory-card');
 const modalWin = document.querySelector('.modal-win');
 const scoreGame = document.querySelector('#pontos');
+const $timer  = document.querySelector('#timer');
 let hasFlippedCard = false;
 let lockBoard = false;
 let firstCard, secondCard;
@@ -15,6 +16,7 @@ document.querySelector('#userName').innerHTML = localStorage.getItem('user');
 
 function startCount() {
     timeSeconds = setInterval(() => {
+        convertSecondsInMinutes(count);
         count += 1;
     }, 1000);
 }
@@ -103,15 +105,15 @@ function score(){
     }
 }
    
+function duasCasas(numero){
+    if (numero <= 9){
+      numero = "0" + numero;
+    }
+    return numero;
+}
+
 function convertSecondsInMinutes(totalSeconds) {
     let time = "";
-
-    function duasCasas(numero){
-        if (numero <= 9){
-          numero = "0" + numero;
-        }
-        return numero;
-    }
 
     if(totalSeconds >= 60) {
         if(totalSeconds >= 3600) {
@@ -123,30 +125,32 @@ function convertSecondsInMinutes(totalSeconds) {
         } else  {
             let minutes = duasCasas(Math.floor(totalSeconds / 60));
             let secondsRest = duasCasas(totalSeconds % 60);
-            time = `${minutes}:${secondsRest}`;
+            time = `00:${minutes}:${secondsRest}`;
         }
     }
     else {
-        time = `00:00:${totalSeconds}`;
+        time = `00:00:${duasCasas(totalSeconds)}`;
     }
 
+    $timer.innerHTML = time;
     document.querySelector("#time").innerHTML = time;
 }
 
 // function create children to open modal in HTML 
 function modalWinner(){
     modalWin.classList.add('active');
-    clearInterval(timeSeconds);    
-    // youWinSound.play();
+    youWinSound.play();
     
     document.querySelector("#restartGame").addEventListener("click", function() {
-        resetGame();
+        restartGame();
     });
-
+    
+    clearInterval(timeSeconds);    
     convertSecondsInMinutes(count);
+    count = 0;
 }
 
-function resetGame() {
+function restartGame() {
     modalWin.classList.remove('active');
     shuffle();
     card.forEach(item => item.classList.remove('flip'));
@@ -155,5 +159,4 @@ function resetGame() {
     scoreGame.innerHTML = points;
     count = 0;
     startCount();
-    console.log(count);
 }
