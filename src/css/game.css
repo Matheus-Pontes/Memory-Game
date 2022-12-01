@@ -130,6 +130,12 @@ header {
     cursor: pointer;
 }
 
+#time {
+    margin-top: 2.5rem;
+    font-size: 16pt;
+    text-shadow: none;
+}
+
 /* Footer =============== */
 footer {
     padding: 2rem;

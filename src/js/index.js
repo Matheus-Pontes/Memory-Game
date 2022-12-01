@@ -1,14 +1,14 @@
-const $modal = document.querySelector('.modal-overlay');
-const $modal2 = document.querySelector('.modal-overlay2');
+const $modalRegister = document.querySelector('#modalRegister');
+const $modalForgetPass = document.querySelector('#modalForgetPass');
 const $hyperlinkElements = document.getElementsByTagName('a');
 
 const toogleActiveModal = modal => modal.classList.toggle('active');
 
 const functionsHyperlink = {
-    'register': () => toogleActiveModal($modal),
-    'btn-cancel': () => toogleActiveModal($modal),
-    'forgetPassword': () => toogleActiveModal($modal2),
-    'btn2-cancel': () => toogleActiveModal($modal2),
+    'register': () => toogleActiveModal($modalRegister),
+    'btn-cancel': () => toogleActiveModal($modalRegister),
+    'forgetPassword': () => toogleActiveModal($modalForgetPass),
+    'btn2-cancel': () => toogleActiveModal($modalForgetPass),
 }
 
 for(let i=0; i < $hyperlinkElements.length; i++) {
@@ -82,7 +82,7 @@ const Cadastro = {
             return false;
         } else {
             Storage.set();
-            toogleActiveModal($modal);
+            toogleActiveModal($modalRegister);
             cleanField(Cadastro.user);
             cleanField(Cadastro.password);
             
@@ -130,7 +130,7 @@ const ForgetPassword = {
         }
         else {
             localStorage.setItem('password', ForgetPassword.newPassword.value);
-            toogleActiveModal($modal2);
+            toogleActiveModal($modalForgetPass);
             cleanField(ForgetPassword.newPassword);
             cleanField(ForgetPassword.repeatNewPassword);
             return true;

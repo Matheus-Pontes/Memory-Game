@@ -5,11 +5,21 @@ let hasFlippedCard = false;
 let lockBoard = false;
 let firstCard, secondCard;
 let points = 0;
+let count = 0;
+let timeSeconds;
 
 const youWinSound = new Audio();
 youWinSound.src = "../assets/audio/you-win.mp3";
 
 document.querySelector('#userName').innerHTML = localStorage.getItem('user');
+
+function startCount() {
+    timeSeconds = setInterval(() => {
+        count += 1;
+    }, 1000);
+}
+
+startCount();
 
 function flipCard() {
     if(lockBoard) return;
@@ -93,14 +103,47 @@ function score(){
     }
 }
    
+function convertSecondsInMinutes(totalSeconds) {
+    let time = "";
+
+    function duasCasas(numero){
+        if (numero <= 9){
+          numero = "0" + numero;
+        }
+        return numero;
+    }
+
+    if(totalSeconds >= 60) {
+        if(totalSeconds >= 3600) {
+            let hours = duasCasas(Math.floor(totalSeconds / 3600));
+            let minutes = duasCasas(Math.floor((totalSeconds % 3600) / 60));
+            let secondsRest = duasCasas((totalSeconds % 3600) % 60);
+            time = `${hours}:${minutes}:${secondsRest}`;
+
+        } else  {
+            let minutes = duasCasas(Math.floor(totalSeconds / 60));
+            let secondsRest = duasCasas(totalSeconds % 60);
+            time = `${minutes}:${secondsRest}`;
+        }
+    }
+    else {
+        time = `00:00:${totalSeconds}`;
+    }
+
+    document.querySelector("#time").innerHTML = time;
+}
+
 // function create children to open modal in HTML 
 function modalWinner(){
     modalWin.classList.add('active');
-    youWinSound.play();
-
+    clearInterval(timeSeconds);    
+    // youWinSound.play();
+    
     document.querySelector("#restartGame").addEventListener("click", function() {
         resetGame();
     });
+
+    convertSecondsInMinutes(count);
 }
 
 function resetGame() {
@@ -110,4 +153,7 @@ function resetGame() {
     card.forEach(card => card.addEventListener('click', flipCard));
     points = 0;
     scoreGame.innerHTML = points;
+    count = 0;
+    startCount();
+    console.log(count);
 }
