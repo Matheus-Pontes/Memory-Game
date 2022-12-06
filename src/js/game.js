@@ -120,16 +120,16 @@ function convertSecondsInMinutes(totalSeconds) {
             let hours = duasCasas(Math.floor(totalSeconds / 3600));
             let minutes = duasCasas(Math.floor((totalSeconds % 3600) / 60));
             let secondsRest = duasCasas((totalSeconds % 3600) % 60);
-            time = `${hours}:${minutes}:${secondsRest}`;
+            time = `${hours}:${minutes}:${secondsRest}s`;
 
         } else  {
             let minutes = duasCasas(Math.floor(totalSeconds / 60));
             let secondsRest = duasCasas(totalSeconds % 60);
-            time = `00:${minutes}:${secondsRest}`;
+            time = `00:${minutes}:${secondsRest}s`;
         }
     }
     else {
-        time = `00:00:${duasCasas(totalSeconds)}`;
+        time = `00:00:${duasCasas(totalSeconds)}s`;
     }
 
     $timer.innerHTML = time;
