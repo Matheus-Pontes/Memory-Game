@@ -130,10 +130,22 @@ header {
     cursor: pointer;
 }
 
-#time {
+#timerModalWinner {
     margin-top: 2.5rem;
     font-size: 16pt;
     text-shadow: none;
+}
+
+.record {
+    margin: 10px auto;
+    width: 250px;
+    text-align: center;
+    color: #fefefe; 
+    display: none;
+}
+
+#recordTime {
+    margin-top: 10px;
 }
 
 /* Responsive ===== */

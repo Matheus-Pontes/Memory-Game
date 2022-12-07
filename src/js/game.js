@@ -1,7 +1,6 @@
 const card = document.querySelectorAll('.memory-card');
 const modalWin = document.querySelector('.modal-win');
 const scoreGame = document.querySelector('#pontos');
-const $timer  = document.querySelector('#timer');
 let hasFlippedCard = false;
 let lockBoard = false;
 let firstCard, secondCard;
@@ -14,10 +13,17 @@ youWinSound.src = "../assets/audio/you-win.mp3";
 
 document.querySelector('#userName').innerHTML = localStorage.getItem('user');
 
+let recordTimeSecond = localStorage.getItem("recordTimeSeconds") != null ? localStorage.getItem("recordTimeSeconds") : 0;
+
+if(recordTimeSecond != 0){
+    document.querySelector(".record").style.display = "block";
+    document.querySelector("#recordTime").innerHTML = convertSecondsInMinutes(recordTimeSecond);
+}
+
 function startCount() {
     timeSeconds = setInterval(() => {
-        convertSecondsInMinutes(count);
         count += 1;
+        document.querySelector('#timerGame').innerHTML = convertSecondsInMinutes(count);
     }, 1000);
 }
 
@@ -132,22 +138,35 @@ function convertSecondsInMinutes(totalSeconds) {
         time = `00:00:${duasCasas(totalSeconds)}s`;
     }
 
-    $timer.innerHTML = time;
-    document.querySelector("#time").innerHTML = time;
+    return time;   
 }
 
 // function create children to open modal in HTML 
 function modalWinner(){
     modalWin.classList.add('active');
     youWinSound.play();
+
+    recordTimeSecond = localStorage.getItem("recordTimeSeconds");
+
+    if(recordTimeSecond == null) 
+        localStorage.setItem("recordTimeSeconds", count);
+    else {
+        let isNewRecord = count < Number(recordTimeSecond) ? true : false;
+        
+        if(isNewRecord) {
+            localStorage.setItem("recordTimeSeconds", count);
+            document.querySelector(".record").style.display = "block";
+            document.querySelector("#recordTime").innerHTML = convertSecondsInMinutes(count);
+        }
+    }
+
+    clearInterval(timeSeconds);
+    document.querySelector("#timerModalWinner").innerHTML = convertSecondsInMinutes(count);
+    count = 0;
     
     document.querySelector("#restartGame").addEventListener("click", function() {
         restartGame();
-    });
-    
-    clearInterval(timeSeconds);    
-    convertSecondsInMinutes(count);
-    count = 0;
+    });    
 }
 
 function restartGame() {
