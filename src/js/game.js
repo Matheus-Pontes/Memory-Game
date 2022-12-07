@@ -141,11 +141,7 @@ function convertSecondsInMinutes(totalSeconds) {
     return time;   
 }
 
-// function create children to open modal in HTML 
-function modalWinner(){
-    modalWin.classList.add('active');
-    youWinSound.play();
-
+function createTimeRecord(recordTimeSecond) {
     recordTimeSecond = localStorage.getItem("recordTimeSeconds");
 
     if(recordTimeSecond == null) 
@@ -159,8 +155,15 @@ function modalWinner(){
             document.querySelector("#recordTime").innerHTML = convertSecondsInMinutes(count);
         }
     }
+}
 
+// function create children to open modal in HTML 
+function modalWinner(){
+    modalWin.classList.add('active');
+
+    createTimeRecord(recordTimeSecond);
     clearInterval(timeSeconds);
+    
     document.querySelector("#timerModalWinner").innerHTML = convertSecondsInMinutes(count);
     count = 0;
     
