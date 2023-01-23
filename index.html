@@ -25,57 +25,10 @@
         <div class="login">
             <form action="" onsubmit="Form.submit(event)">
                 <input type="text" name="user" id="user" placeholder="User">
-                <input type="password" name="pw" id="password" placeholder="Password">
                 <button type="submit" id="btnGame">GAME</button>
-
-                <div class="modals">
-                    <a href="#" id="register">
-                        Cadastre-se
-                    </a>
-                    <a href="#" id="forgetPassword">
-                        Esqueceu a senha?
-                    </a>
-                </div>
             </form>
         </div>
     </main>
-
-    <div class="modal-overlay" id="modalRegister">
-        <div class="modal">
-            <div id="form">
-                <h2>Seus dados</h2>
-                <form action="" onsubmit="Cadastro.submit(event)">
-                    <div class="input-group">
-                        <input type="text" name="nome" id="name" placeholder="Name">
-                        <input type="password" name="pass" id="pass" placeholder="Password">
-                    </div>
-                    <div class="input-group actions">
-                        <a href="#" class='btn-cancel' id="btn-cancel" value='3'>Cancel</a>
-                        <button class="btn-salve" id="btn-salve" type="submit">Salvar</button>
-                    </div>
-                </form>
-
-            </div>
-        </div>
-    </div>
-
-    <div class="modal-overlay2" id="modalForgetPass">
-        <div class="modal">
-            <div id="form">
-                <h2>Nova Senha</h2>
-                <form action="" onsubmit="ForgetPassword.submit(event)">
-                    <div class="input-group">
-                        <input type="password" name="newPassword" id="newPassword" placeholder="New password">
-                        <input type="password" name="repeatNewPassword" id="repeatNewPassword" placeholder="New password">
-                    </div>
-                    <div class="input-group actions">
-                        <a href="#" class="btn-cancel" id="btn2-cancel" value='4'>Cancel</a>
-                        <button type="submit" class="btn-salve" id="btn2-salve">Salvar</button>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
 
     <footer>
         <a href="https://github.com/Matheus-Pontes/Memory-Game"> 
