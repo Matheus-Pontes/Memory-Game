@@ -22,3 +22,7 @@
 - **JavaScript** 
 - **HTML5**         
 - **CSS3**     
+
+## Bugs 
+- [ ] Verificar bug de atualização de recordTime
+- [ ] Ao entrar com um usuário limpar localStorage para o record ser 0 e depois de jogar ai sim salvar.
