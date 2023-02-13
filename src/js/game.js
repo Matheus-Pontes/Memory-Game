@@ -13,13 +13,6 @@ youWinSound.src = "../assets/audio/you-win.mp3";
 
 document.querySelector('#userName').innerHTML = localStorage.getItem('user');
 
-let recordTimeSecond = localStorage.getItem("recordTimeSeconds") != null ? localStorage.getItem("recordTimeSeconds") : 0;
-
-if(recordTimeSecond != 0){
-    document.querySelector(".record").style.display = "block";
-    document.querySelector("#recordTime").innerHTML = convertSecondsInMinutes(recordTimeSecond);
-}
-
 function startCount() {
     timeSeconds = setInterval(() => {
         count += 1;
@@ -178,6 +171,7 @@ function restartGame() {
     card.forEach(item => item.classList.remove('flip'));
     card.forEach(card => card.addEventListener('click', flipCard));
     points = 0;
+    scoreGame.style.display = 'block';
     scoreGame.innerHTML = points;
     count = 0;
     startCount();

@@ -24,5 +24,6 @@ const Storage = {
     },
     set(){
         localStorage.setItem('user', Form.getValues().user);
+        localStorage.setItem('recordTimeSeconds', 0);
     }
 }
