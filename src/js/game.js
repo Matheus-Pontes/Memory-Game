@@ -134,27 +134,28 @@ function convertSecondsInMinutes(totalSeconds) {
     return time;   
 }
 
-function createTimeRecord(recordTimeSecond) {
-    recordTimeSecond = localStorage.getItem("recordTimeSeconds");
-
-    if(recordTimeSecond == null) 
-        localStorage.setItem("recordTimeSeconds", count);
-    else {
-        let isNewRecord = count < Number(recordTimeSecond) ? true : false;
+function createTimeRecord(time) {
+    let recordTimeStore = localStorage.getItem("recordTimeSeconds");
+    
+    if(recordTimeStore) {
+        let isNewRecord = recordTimeStore > Number(time) ? true : false;
         
-        if(isNewRecord) {
-            localStorage.setItem("recordTimeSeconds", count);
-            document.querySelector(".record").style.display = "block";
-            document.querySelector("#recordTime").innerHTML = convertSecondsInMinutes(count);
-        }
+        if(isNewRecord)
+            localStorage.setItem("recordTimeSeconds", time);
     }
+    else {
+        localStorage.setItem("recordTimeSeconds", time);
+    }
+
+    document.querySelector(".record").style = "display: block;";
+    document.querySelector("#recordTime").innerHTML = convertSecondsInMinutes(time);
 }
 
 // function create children to open modal in HTML 
 function modalWinner(){
     modalWin.classList.add('active');
 
-    createTimeRecord(recordTimeSecond);
+    createTimeRecord(count);
     clearInterval(timeSeconds);
     
     document.querySelector("#timerModalWinner").innerHTML = convertSecondsInMinutes(count);
