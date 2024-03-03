@@ -11,32 +11,22 @@
 </head>
 <body>
     <header>
-        <h1>Memory Game NFL</h1>
+        <h1>Memory Game</h1>
     </header>
 
     <main class="content">
-
-        <div class="escudoTeams">
+        <div class="logoNFL">
             <figure>
                 <img id='escudosTimesNfl' src="src/img/nfl.svg" alt="times da nfl">
             </figure>
         </div>
-
         <div class="login">
-            <form action="" onsubmit="Form.submit(event)">
-                <input type="text" name="user" id="user" placeholder="User">
+            <form onsubmit="Form.submit(event)">
+                <input type="text" name="yourName" id="yourName" placeholder="Your name" required>
                 <button type="submit" id="btnGame">GAME</button>
             </form>
         </div>
     </main>
-
-    <footer>
-        <a href="https://github.com/Matheus-Pontes/Memory-Game"> 
-            Developed by Matheus Pontes 
-        </a>
-        <img src="https://img.icons8.com/color/48/000000/github--v3.png"/>
-    </footer>
-
     <script src="src/js/index.js" defer></script>
 </body>
 </html>
