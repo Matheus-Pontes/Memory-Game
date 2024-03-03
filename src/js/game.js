@@ -8,9 +8,6 @@ let points = 0;
 let count = 0;
 let timeSeconds;
 
-const youWinSound = new Audio();
-youWinSound.src = "../assets/audio/you-win.mp3";
-
 document.querySelector('#userName').innerHTML = localStorage.getItem('user');
 
 function startCount() {

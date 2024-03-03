@@ -6,16 +6,33 @@
 }
 :root{
     --azul: #0468BF;
-    --pretoClaro: #212729;  
+    --pretoClaro: #18181b;  
     --branco: #fff;
     --bc: #183446;
 }
 
 body {
+    display: grid;
+    place-content: center;
+    gap: 3rem;
+    padding: 0 .75rem;
+    position: relative;
+
     height: 100vh;
-    background-image: url('../img/_back.jpeg');
+    background-image: url('../img/bg-stadium.jpg');
     background-size: cover;
-    background-color: var(--bc);
+    background-repeat: no-repeat;
+    background-size: cover;
+    object-fit: cover;
+}
+
+body::before {
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background: rgba(0,0,0,.8);
+    z-index: -1;
 }
 
 header {
@@ -72,8 +89,15 @@ header {
     border-radius: 5px;
     position: absolute;
     background: var(--pretoClaro);
+    border: 1px solid #cbd5e1;
     backface-visibility: hidden;
 }
+
+.back-face {
+    padding: 0;
+    box-shadow: 0 0 8px #cbd5e1;
+}
+
 .back-face:hover{
     background: black;
 }
@@ -97,7 +121,7 @@ header {
     justify-content: center;
     flex-direction: column;
 
-    font-size: 50pt;
+    font-size: 38pt;
     font-weight: bold;
     color: #fff;
     text-shadow: 3px 5px 5px #fff;
@@ -108,7 +132,7 @@ header {
 
 @keyframes winner {
     from {font-size: 20pt;}
-    to {font-size: 50pt;}
+    to {font-size: 38pt;}
 }
 
 .modal-win.active {
@@ -132,7 +156,7 @@ header {
 
 #timerModalWinner {
     margin-top: 2.5rem;
-    font-size: 16pt;
+    font-size: 14pt;
     text-shadow: none;
 }
 
@@ -179,6 +203,6 @@ header {
 
     @keyframes winner {
         from {font-size: 1pt;}
-        to {font-size: 16pt;}
+        to {font-size: 14pt;}
     }
 }
