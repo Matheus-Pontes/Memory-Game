@@ -36,11 +36,11 @@ body::before {
 }
 
 header {
-    padding: 1.25rem;
     display: flex;
     align-items: center;
     justify-content: space-between;
     color: var(--branco);
+    font-size: 13px;
 }
 
 .points {
