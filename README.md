@@ -3,20 +3,19 @@
 - [Divirta-se](https://memory-game10.vercel.app/)
 
 ## Layout
-- Tela de login: ![image](https://user-images.githubusercontent.com/62751571/181507611-6c3221f6-3147-4338-9853-301ef010e306.png)
-- Tela do jogo: ![image](https://user-images.githubusercontent.com/62751571/181507748-c545b726-187a-469f-bb72-b0dedf212fb2.png)
-- Tela de restart: ![image](https://user-images.githubusercontent.com/62751571/174336375-4989950a-820b-44d6-9140-d2b0ed7930d9.png)
+- Tela de identificação: ![tela de identificação: me diga seu nome](tela-login.png)
+- Tela do jogo: ![tela do jogo](tela-jogo.png)
+- Tela de restart: ![tela de vitória - touchdoooowwwn](tela-da-vitoria.png)
 
 ## :computer: Funcionamento 
-- Primeiro temos um tela de login [user & password] 
-- Temos dois **modals**: 
-    - Cadastro [user & password]
-    - Esqueceu senha [new password]
+- Temos uma primeira tela de identificação
+    - Apenas para saber seu nome
 - Tela do jogo:
     - Efeito de *flip-card* e **lógica do jogo**: 
         - [Sugestão de vídeo - inglês](https://youtu.be/ZniVgo8U7ek)
-    - Pontuação com 6 pontos, no momento
-        - abre um modal dizendo YOU WIN! - com o _*you win perfect de Street Figther*_ (.mp3)
+    - A pontuação passou a ser o tempo de resolução das combinações
+        - O seu menor tempo vai ser seu recorde.
+            - ![tela com resultado do record na tela](tela-de-recorde.png)
 
 ## :rocket: Tecnologias
 - **JavaScript** 
