@@ -25,3 +25,11 @@
 ## Bugs 
 - [x] Verificar bug de atualização de recordTime
 - [x] Ao entrar com um usuário limpar localStorage para o record ser 0 e depois de jogar ai sim salvar.
+
+## Tasks
+- [] Criar layouts
+- [] Atualizar tecnologia
+  - React | Vue 
+- [] Criar salas de jogos
+- [] Criar sistema para jogar juntos
+- [] Criar tela para verificar sistema de pontos
